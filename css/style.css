@@ -1,0 +1,235 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #121212;
+    color: #f1f1f1;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background: #1b1b1b !important;
+}
+
+.navbar .form-control {
+    width: 200px; /* Adjust size */
+}
+
+.search-dropdown {
+    max-width: 250px;
+}
+
+#searchResults {
+    max-height: 200px;
+    overflow-y: auto;
+    background: white;
+    border: 1px solid #ddd;
+}
+
+#searchResults li:hover {
+    background-color: #f1f1f1;
+}
+
+/* Search Dropdown Styling */
+        .search-dropdown {
+            max-width: 250px;
+            position: relative;
+        }
+        #searchResults {
+            max-height: 200px;
+            overflow-y: auto;
+            background: white;
+            border: 1px solid #ddd;
+            margin-top: 2px;
+            display: none;
+            position: absolute;
+            width: 100%;
+            z-index: 1000;
+        }
+        #searchResults li:hover {
+            background-color: #f1f1f1;
+        }
+        .contact-section {
+            background: #f9f9f9;
+            padding: 50px 0;
+        }
+        .contact-form input, .contact-form textarea {
+            margin-bottom: 15px;
+        }
+        .social-icons a {
+            font-size: 20px;
+            margin-right: 10px;
+            color: #333;
+        }
+        .social-icons a:hover {
+            color: #ffcc00;
+        }
+
+
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.5);
+}
+.hero-content h1 {
+    color: #fff;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+}
+
+/* Section Headers */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.section-header h2 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+.section-header a {
+    color: #ffcc00;
+    font-weight: 600;
+    text-decoration: none;
+}
+.section-header a:hover {
+    text-decoration: underline;
+}
+
+/* Movie & Series Cards */
+.movie-card, .series-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #1e1e1e;
+}
+.movie-card img, .series-card img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+.movie-card:hover img, .series-card:hover img {
+    transform: scale(1.05);
+}
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+}
+.card-overlay h5 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+.card-overlay p {
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+.card-overlay a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 12px;
+    background: #ffcc00;
+    color: #000;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.card-overlay a:hover {
+    background: #e6b800;
+}
+
+/* Section Styling */
+.movies-section, .series-section {
+    padding: 60px 20px;
+}
+.series-section {
+    background: #1a1a1a;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 60px 20px;
+    background: #121212;
+}
+.contact-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+.contact-form {
+    max-width: 600px;
+    margin: auto;
+}
+.contact-form .form-control {
+    background: #1e1e1e;
+    border: none;
+    color: #fff;
+}
+.contact-form .form-control::placeholder {
+    color: #bbb;
+}
+.contact-form button {
+    background: #ffcc00;
+    color: #000;
+    font-weight: bold;
+    border: none;
+}
+.contact-form button:hover {
+    background: #e6b800;
+}
+
+footer {
+    background-color: #111;
+    color: white;
+}
+
+footer a:hover {
+    color: #ffc107; /* matches your button color */
+}
+
+footer h5 {
+    font-size: 1.1rem;
+}
+
+.contact-section {
+    background: #111;
+    color: white;
+}
+.contact-section h2 {
+    font-size: 2.5rem;
+}
+.contact-section p {
+    font-size: 1rem;
+    color: #ccc;
+}
+.contact-form input,
+.contact-form textarea {
+    border-radius: 5px;
+    border: 1px solid #000000;
+}
+.contact-form button {
+    background: #ffcc00;
+    color: #111;
+    font-weight: bold;
+}
+.social-icons a {
+    transition: 0.3s;
+}
+.social-icons a:hover {
+    color: #ffcc00;
+}
+

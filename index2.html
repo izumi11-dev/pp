@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anime Pokémon Movies</title>
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+
+<!-- Custom Styles -->
+<style>
+body {
+    background: #0f0f1a;
+    color: #f1f1f1;
+    font-family: 'Segoe UI', sans-serif;
+}
+.navbar {
+    background: #1b1b2f !important;
+}
+.hero-section {
+    height: 90vh;
+    background: url('https://wallpaperaccess.com/full/3707273.jpg') center/cover no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+.hero-content {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+}
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffcc00;
+    text-shadow: 2px 2px 8px black;
+}
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.movie-card, .series-card {
+    background: #1b1b2f;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+.movie-card img, .series-card img {
+    width: 100%;
+    display: block;
+}
+.movie-card:hover, .series-card:hover {
+    transform: scale(1.05);
+}
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    color: white;
+}
+.card-overlay h5 {
+    margin: 0;
+}
+.contact-section {
+    background: #12121f;
+    padding: 60px 20px;
+}
+.contact-form .form-control {
+    background: #1b1b2f;
+    border: none;
+    color: white;
+}
+.contact-form .form-control::placeholder {
+    color: #bbb;
+}
+.contact-form button {
+    background: #ffcc00;
+    color: #000;
+    font-weight: bold;
+}
+.contact-form button:hover {
+    background: #e6b800;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+<div class="container">
+    <a class="navbar-brand fw-bold" href="#">Pokémon Anime</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#movies">Movies</a></li>
+            <li class="nav-item"><a class="nav-link" href="#series">Series</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Explore Pokémon Anime</h1>
+        <p class="lead">Movies & Series in stunning anime style</p>
+        <a href="#movies" class="btn btn-warning btn-lg mt-3">Watch Now <i class="fa-solid fa-play ms-2"></i></a>
+    </div>
+</section>
+
+<!-- Movies Section -->
+<section id="movies" class="container my-5">
+    <div class="section-header">
+        <h2>Movies</h2>
+        <a href="#">See All</a>
+    </div>
+    <div class="row g-4">
+        <!-- Movie Card -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="movie-card position-relative">
+                <img src="https://wallpaperaccess.com/full/3707273.jpg" alt="Movie">
+                <div class="card-overlay">
+                    <h5>Pokémon Movie 1</h5>
+                    <p>Epic Pokémon journey begins.</p>
+                    <a href="#" class="btn btn-sm btn-warning">Watch</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="movie-card position-relative">
+                <img src="https://wallpaperaccess.com/full/3707273.jpg" alt="Movie">
+                <div class="card-overlay">
+                    <h5>Pokémon Movie 2</h5>
+                    <p>Legendary battles await.</p>
+                    <a href="#" class="btn btn-sm btn-warning">Watch</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Series Section -->
+<section id="series" class="container my-5">
+    <div class="section-header">
+        <h2>Series</h2>
+        <a href="#">See All</a>
+    </div>
+    <div class="row g-4">
+        <!-- Series Card -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="series-card position-relative">
+                <img src="https://wallpaperaccess.com/full/3707273.jpg" alt="Series">
+                <div class="card-overlay">
+                    <h5>Pokémon Series 1</h5>
+                    <p>Ash's adventure begins.</p>
+                    <a href="#" class="btn btn-sm btn-warning">Watch</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="series-card position-relative">
+                <img src="https://wallpaperaccess.com/full/3707273.jpg" alt="Series">
+                <div class="card-overlay">
+                    <h5>Pokémon Series 2</h5>
+                    <p>New adventures and Pokémon.</p>
+                    <a href="#" class="btn btn-sm btn-warning">Watch</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+<div class="container">
+    <h2 class="text-center">Contact Us</h2>
+    <form class="contact-form mt-4">
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Name" required>
+        </div>
+        <div class="mb-3">
+            <input type="email" class="form-control" placeholder="Email" required>
+        </div>
+        <div class="mb-3">
+            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-warning">Send Message</button>
+        </div>
+    </form>
+</div>
+</section>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

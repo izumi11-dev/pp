@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pokemon</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Animate CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- AOS CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      background: #0b0b0b;
+      color: #fff;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    nav.navbar {
+      background: #111;
+    }
+
+    /* HERO / SLIDER */
+    .hero-carousel { height: 90vh; }
+    .hero-carousel .carousel-inner, .hero-carousel .carousel-item { height: 100%; }
+    .hero-carousel .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .slide-caption {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      padding: 1rem 1.5rem;
+      background: rgba(0, 0, 0, 0.45);
+      border-radius: 12px;
+      max-width: 80%;
+    }
+    .slide-caption h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 700;
+      margin-bottom: .5rem;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+    }
+    .slide-caption p {
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      opacity: 0.95;
+    }
+
+    /* CARDS */
+    .movie-card, .series-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      cursor: pointer;
+      height: 360px;
+      background: #111;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+      transition: transform .28s ease;
+    }
+    .movie-card:hover, .series-card:hover { transform: translateY(-6px); }
+    .movie-card img, .series-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .45s ease;
+    }
+    .movie-card:hover img, .series-card:hover img { transform: scale(1.08); }
+
+    .card-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 18px;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.6) 100%);
+    }
+    .card-overlay h5 { margin: 0 0 6px; font-size: 1.1rem; font-weight: 600; }
+    .card-overlay p { margin: 0; font-size: 0.9rem; }
+
+    footer { background: #060606; color: #fff; padding: 1rem 0; text-align: center; }
+
+    /* Search bar style */
+    .search-box {
+      max-width: 500px;
+      margin: 20px auto;
+    }
+    .search-input {
+      border-radius: 50px;
+      padding: 10px 20px;
+      width: 80%;
+      border: none;
+    }
+    .search-btn {
+      border-radius: 50px;
+      padding: 10px 20px;
+      background: #ffcc00;
+      border: none;
+      color: #111;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* See More button style */
+    .see-more-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #ffcc00;
+      color: #111;
+      font-weight: bold;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .see-more-btn:hover {
+      background: #e6b800;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Pokémon</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#movies">Movies</a></li>
+          <li class="nav-item"><a class="nav-link" href="#series">Series</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Search -->
+  <div class="search-box text-center">
+    <input type="text" class="search-input" placeholder="Search Pokémon...">
+    <button class="search-btn">Search</button>
+  </div>
+
+  <!-- HERO: carousel -->
+  <div id="heroCarousel" class="carousel slide carousel-fade hero-carousel" data-bs-ride="carousel" data-bs-interval="3000" data-bs-wrap="true" data-bs-pause="false">
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-aos="fade-down">
+        <img src="pikachu.jpg" alt="Pikachu">
+        <div class="slide-caption animate__animated animate__fadeInUp">
+          <h2>Pikachu ⚡</h2>
+          <p>The most iconic Pokémon of them all</p>
+        </div>
+      </div>
+      <div class="carousel-item" data-aos="fade-down">
+        <img src="charizard.jpg" alt="Charizard">
+        <div class="slide-caption animate__animated animate__fadeInUp">
+          <h2>Charizard 🔥</h2>
+          <p>Feel the heat of fiery battles</p>
+        </div>
+      </div>
+      <div class="carousel-item" data-aos="fade-down">
+        <img src="mewtwo.jpg" alt="Mewtwo">
+        <div class="slide-caption animate__animated animate__fadeInUp">
+          <h2>Mewtwo 💫</h2>
+          <p>A legendary power awakens</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Movies Section -->
+  <section id="movies" class="movies-section py-5" data-aos="fade-up">
+    <div class="container">
+      <h2 class="mb-4">Movies</h2>
+      <div class="row g-4">
+        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="movie-card">
+            <img src="pokemon-va6139eg5csznzmw.jpg" alt="Movie 1">
+            <div class="card-overlay">
+              <h5>Pokémon: The First Movie</h5>
+              <p>Ash and Pikachu face Mewtwo</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="movie-card">
+            <img src="pokemon-va6139eg5csznzmw.jpg" alt="Movie 2">
+            <div class="card-overlay">
+              <h5>Pokémon: 2000</h5>
+              <p>Legendary birds clash in epic battles</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="movie-card">
+            <img src="pokemon-va6139eg5csznzmw.jpg" alt="Movie 3">
+            <div class="card-overlay">
+              <h5>Pokémon 3</h5>
+              <p>Unown unleash mysterious powers</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="movie-card">
+            <img src="pokemon-va6139eg5csznzmw.jpg" alt="Movie 4">
+            <div class="card-overlay">
+              <h5>Pokémon 4Ever</h5>
+              <p>Meet Celebi, guardian of the forest</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- See More Button -->
+      <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="500">
+        <a href="#movies" class="see-more-btn">See More Movies</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Series Section -->
+  <section id="series" class="series-section py-5" data-aos="fade-up">
+    <div class="container">
+      <h2 class="mb-4">Series</h2>
+      <div class="row g-4">
+        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="series-card">
+            <img src="pokemon-va6139eg5csznzmw.jpg" alt="Kanto Series">
+            <div class="card-overlay">
+              <h5>Pokémon: Indigo League</h5>
+              <p>Ash’s journey begins in Kanto</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="series-card">
+            <img src="pokemon-va6139eg5csznzmw.jpg" alt="Johto Series">
+            <div class="card-overlay">
+              <h5>Pokémon: Johto Journeys</h5>
+              <p>New Pokémon and rivals await</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="series-card">
+            <img src="pokemon-va6139eg5csznzmw.jpg" alt="Hoenn Series">
+            <div class="card-overlay">
+              <h5>Pokémon: Advanced</h5>
+              <p>Adventures in the Hoenn region</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="series-card">
+            <img src="pokemon-va6139eg5csznzmw.jpg" alt="Sinnoh Series">
+            <div class="card-overlay">
+              <h5>Pokémon: Diamond & Pearl</h5>
+              <p>Epic battles in the Sinnoh region</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- See More Button -->
+      <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="500">
+        <a href="#series" class="see-more-btn">See More Series</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5" data-aos="fade-down">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form>
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email">
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea class="form-control" id="message" rows="4"></textarea>
+        </div>
+        <button type="submit" class="btn btn-warning">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Pokémon. All Rights Reserved.
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, easing: 'ease-in-out', once: true });
+  </script>
+</body>
+</html>
