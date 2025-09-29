@@ -38,29 +38,67 @@
       display: block;
       cursor: pointer;
       box-shadow: 0 8px 24px rgba(0,0,0,0.45);
-      transition: transform .28s ease;
+      /* transition: transform .28s ease; */
     }
+@media (max-width: 575px) {
 
-    @media (max-width:575px) {
-      .hero-carousel { height: 50vh; }
-    .hero-carousel .carousel-inner, .hero-carousel .carousel-item { height: 100%; }
-    .hero-carousel .carousel-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      border-radius: 12px;
-      display: block;
-      cursor: pointer;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.45);
-      transition: transform .28s ease;
-    }
-    }
+  #heroCarousel{
+    height: 50%;
+  }
+  .hero-carousel {
+    height: 50vh; /* keep half viewport height */
+  }
+
+  .hero-carousel .carousel-inner,
+  .hero-carousel .carousel-item {
+    height: 100%;
+  }
+
+  .hero-carousel .carousel-item img {
+    width: 100%;
+    height: 50%; /* keep only half of the container height */
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+    /* transition: transform 0.28s ease; */
+  }
+
+  .hero-carousel .carousel-item .slide-caption {
+    position: absolute;
+    top: 0; /* adjust so caption sits below image */
+    /* left: 50%; */
+          /* transform: translate(0, -50%); */
+
+    height: 100%;
+    text-align: center;
+    padding: 0.8rem 1rem;
+    background: rgba(0, 0, 0, 0.45);
+    border-radius: 12px;
+    max-width: 100%;
+  }
+
+  .slide-caption h2 {
+     
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  }
+
+  .slide-caption p {
+     
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    opacity: 0.95;
+  }
+}
+
+/*  */
     .slide-caption {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      /* transform: translate(-50%, 0); */
       text-align: center;
       padding: 1rem 1.5rem;
       background: rgba(0, 0, 0, 0.45);
@@ -91,6 +129,8 @@
     }
 
     @media (max-width:576px){
+    
+
       .movie-card, .series-card {
       position: relative;
     overflow: hidden;
@@ -149,7 +189,24 @@
       font-weight: bold;
       cursor: pointer;
     }
-
+   
+    @media (max-width:576px){
+      .search-input {
+      border-radius: 50px;
+      padding: 10px 20px;
+      width: 50%;
+      border: none;
+    }
+    .search-btn {
+      border-radius: 50px;
+      padding: 10px 20px;
+      background: #ffcc00;
+      border: none;
+      color: #111;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    }
     /* See More button style */
     .see-more-btn {
       display: inline-block;
@@ -198,21 +255,21 @@
     <div class="carousel-inner">
       <div class="carousel-item active" data-aos="fade-down">
         <img src="pikachu.jpg" alt="Pikachu">
-        <div class="slide-caption animate__animated animate__fadeInUp">
+        <div class="slide-caption">
           <h2>Pikachu ⚡</h2>
           <p>The most iconic Pokémon of them all</p>
         </div>
       </div>
       <div class="carousel-item" data-aos="fade-down">
         <img src="charizard.jpg" alt="Charizard">
-        <div class="slide-caption animate__animated animate__fadeInUp">
+        <div class="slide-caption">
           <h2>Charizard 🔥</h2>
           <p>Feel the heat of fiery battles</p>
         </div>
       </div>
       <div class="carousel-item" data-aos="fade-down">
         <img src="mewtwo.jpg" alt="Mewtwo">
-        <div class="slide-caption animate__animated animate__fadeInUp">
+        <div class="slide-caption">
           <h2>Mewtwo 💫</h2>
           <p>A legendary power awakens</p>
         </div>
