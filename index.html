@@ -74,10 +74,27 @@
       overflow: hidden;
       border-radius: 12px;
       cursor: pointer;
-      height: 360px;
+      height: 24rem;
       background: #111;
       box-shadow: 0 8px 24px rgba(0,0,0,0.45);
       transition: transform .28s ease;
+    }
+
+    @media (max-width:576px){
+      .movie-card, .series-card {
+      position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 100%;        /* take full width of container */
+    max-width: 300px;   /* don’t stretch too big */
+    height: auto;       /* let height adjust automatically */
+    aspect-ratio: 3/4;  /* keeps proportion (portrait card) */
+    background: #111;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+    transition: transform 0.28s ease;
+    margin: 0 auto; 
+    }
     }
     .movie-card:hover, .series-card:hover { transform: translateY(-6px); }
     .movie-card img, .series-card img {
@@ -193,103 +210,106 @@
     </div>
   </div>
 
-  <!-- Movies Section -->
-  <section id="movies" class="movies-section py-5" data-aos="fade-up">
-    <div class="container">
-      <h2 class="mb-4">Movies</h2>
-      <div class="row g-4">
-        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
-          <div class="movie-card">
-            <img src="pokemon-va6139eg5csznzmw.jpg" alt="Movie 1">
-            <div class="card-overlay">
-              <h5>Pokémon: The First Movie</h5>
-              <p>Ash and Pikachu face Mewtwo</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="200">
-          <div class="movie-card">
-            <img src="pokemon-va6139eg5csznzmw.jpg" alt="Movie 2">
-            <div class="card-overlay">
-              <h5>Pokémon: 2000</h5>
-              <p>Legendary birds clash in epic battles</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="300">
-          <div class="movie-card">
-            <img src="pokemon-va6139eg5csznzmw.jpg" alt="Movie 3">
-            <div class="card-overlay">
-              <h5>Pokémon 3</h5>
-              <p>Unown unleash mysterious powers</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="400">
-          <div class="movie-card">
-            <img src="pokemon-va6139eg5csznzmw.jpg" alt="Movie 4">
-            <div class="card-overlay">
-              <h5>Pokémon 4Ever</h5>
-              <p>Meet Celebi, guardian of the forest</p>
-            </div>
+ <!-- Movies Section -->
+<section id="movies" class="movies-section py-5" data-aos="fade-up">
+  <div class="container">
+    <h2 class="mb-4">Movies</h2>
+    <div class="row g-4">
+      <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="movie-card">
+          <img src="pokemon-va6139eg5csznzmw.jpg" alt="Movie 1">
+          <div class="card-overlay">
+            <h5>Pokémon: The First Movie</h5>
+            <p>Ash and Pikachu face Mewtwo</p>
           </div>
         </div>
       </div>
-      <!-- See More Button -->
-      <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="500">
-        <a href="#movies" class="see-more-btn">See More Movies</a>
+      <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="movie-card">
+          <img src="pokemon-va6139eg5csznzmw.jpg" alt="Movie 2">
+          <div class="card-overlay">
+            <h5>Pokémon: 2000</h5>
+            <p>Legendary birds clash in epic battles</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="movie-card">
+          <img src="pokemon-va6139eg5csznzmw.jpg" alt="Movie 3">
+          <div class="card-overlay">
+            <h5>Pokémon 3</h5>
+            <p>Unown unleash mysterious powers</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+        <div class="movie-card">
+          <img src="pokemon-va6139eg5csznzmw.jpg" alt="Movie 4">
+          <div class="card-overlay">
+            <h5>Pokémon 4Ever</h5>
+            <p>Meet Celebi, guardian of the forest</p>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+    <!-- See More Button -->
+    <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="500">
+      <a href="#movies" class="see-more-btn">See More Movies</a>
+    </div>
+  </div>
+</section>
 
-  <!-- Series Section -->
-  <section id="series" class="series-section py-5" data-aos="fade-up">
-    <div class="container">
-      <h2 class="mb-4">Series</h2>
-      <div class="row g-4">
-        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
-          <div class="series-card">
-            <img src="pokemon-va6139eg5csznzmw.jpg" alt="Kanto Series">
-            <div class="card-overlay">
-              <h5>Pokémon: Indigo League</h5>
-              <p>Ash’s journey begins in Kanto</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="200">
-          <div class="series-card">
-            <img src="pokemon-va6139eg5csznzmw.jpg" alt="Johto Series">
-            <div class="card-overlay">
-              <h5>Pokémon: Johto Journeys</h5>
-              <p>New Pokémon and rivals await</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="300">
-          <div class="series-card">
-            <img src="pokemon-va6139eg5csznzmw.jpg" alt="Hoenn Series">
-            <div class="card-overlay">
-              <h5>Pokémon: Advanced</h5>
-              <p>Adventures in the Hoenn region</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="400">
-          <div class="series-card">
-            <img src="pokemon-va6139eg5csznzmw.jpg" alt="Sinnoh Series">
-            <div class="card-overlay">
-              <h5>Pokémon: Diamond & Pearl</h5>
-              <p>Epic battles in the Sinnoh region</p>
-            </div>
+
+
+<!-- Series Section -->
+<section id="movies" class="movies-section py-5" data-aos="fade-up">
+  <div class="container">
+    <h2 class="mb-4">Series</h2>
+    <div class="row g-4">
+      <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="movie-card">
+          <img src="pokemon-va6139eg5csznzmw.jpg" alt="Movie 1">
+          <div class="card-overlay">
+            <h5>Pokémon: The First Movie</h5>
+            <p>Ash and Pikachu face Mewtwo</p>
           </div>
         </div>
       </div>
-      <!-- See More Button -->
-      <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="500">
-        <a href="#series" class="see-more-btn">See More Series</a>
+      <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="movie-card">
+          <img src="pokemon-va6139eg5csznzmw.jpg" alt="Movie 2">
+          <div class="card-overlay">
+            <h5>Pokémon: 2000</h5>
+            <p>Legendary birds clash in epic battles</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="movie-card">
+          <img src="pokemon-va6139eg5csznzmw.jpg" alt="Movie 3">
+          <div class="card-overlay">
+            <h5>Pokémon 3</h5>
+            <p>Unown unleash mysterious powers</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+        <div class="movie-card">
+          <img src="pokemon-va6139eg5csznzmw.jpg" alt="Movie 4">
+          <div class="card-overlay">
+            <h5>Pokémon 4Ever</h5>
+            <p>Meet Celebi, guardian of the forest</p>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+    <!-- See More Button -->
+    <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="500">
+      <a href="#movies" class="see-more-btn">See More Movies</a>
+    </div>
+  </div>
+</section>
+
 
   <!-- Contact Section -->
   <section id="contact" class="py-5" data-aos="fade-down">
@@ -327,4 +347,3 @@
   </script>
 </body>
 </html>
-
